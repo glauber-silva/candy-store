@@ -12,6 +12,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		panic(fmt.Sprint("status is not 200: %d", resp.StatusCode))
 	}
@@ -19,5 +20,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(doc)
+	extractTable(doc)
+}
+
+func extractTable(node *html.Node) {
+	if node.Type == html.ElementNode && node.Data == "table" {
+		fmt.Println(node.Data)
+	}
+	for no := node.FirstChild; no != nil; no = no.NextSibling {
+		extractTable(no)
+	}
 }
