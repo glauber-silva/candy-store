@@ -27,6 +27,7 @@ func extractTable(node *html.Node) {
 	if node.Type == html.ElementNode && node.Data == "table" {
 		fmt.Println(node.Data)
 	}
+
 	for no := node.FirstChild; no != nil; no = no.NextSibling {
 		extractTable(no)
 	}

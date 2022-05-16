@@ -1,0 +1,11 @@
+[2022-05-15 23:15] Todo.
+Extract from https://candystore.zimpler.net/ the top consumers and their favorite candies.
+
+[2022-05-15 23:19] Specifications.
+There is no specification of how access should occur or how the information should be presented. So thinking like a customer, I would like to go to a link and look at that data. It would be the simplest way.
+
+[2022-05-15 23:25] Approach.
+In the application, I believe there are several ways to do this. In the first moment, I will extract the data from the endpoint above. Then, infer (to apply some algorithms) to calculate the top customers and their favorite sweets and show them on a web page. This way, I will be able to demonstrate some basic concepts of scraping, web development, and data structure with Golang.
+
+[2022-05-15 23:30] Until Now.
+Initially, I did a scraping of the site to look for tables. I identified two tables. One table summarizes the top customers, the number of candies consumed, and their favorites. But this table does not appear in the presented HTML. I found out about its existence through scraping. It would be an option to use it to demonstrate top customers, but this may not be a reliable source of data. The safest option is to take the data from the second table and calculate the data.
